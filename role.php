@@ -11,7 +11,7 @@
 	session_start();
 
 	if (!isset($_SESSION['login_id'])) {
-        header ("Location: http://localhost/project/login.php");
+        header ("Location: http://localhost/EMS/login.php");
     }
  ?>
 
@@ -23,12 +23,10 @@
 
  <div class="container">
 
- 		<div class="col-sm-6">
- 			<h2>Role List</h2>
- 			<span id="role-list"></span>
- 		</div>
 
- 		<?php
+ 		<div class="row">
+ 			
+ 			<?php
 
  			if($_SESSION['login_role_id']==1){
 
@@ -42,6 +40,22 @@
  				</div>';
  			}
  		?>
+
+ 		</div>
+
+ 		<div class="row">
+ 			
+ 			<div class="col-sm-4">
+ 			<h2>Role List</h2>
+ 			<span id="role-list"></span>
+ 		</div>
+
+ 			<div class="col-sm-8">
+ 				<span id="employee-list"></span>
+ 			</div>
+
+ 		</div>
+
 
  	<!-- Modal -->
  	  <div class="modal fade" id="role_edit_modal" role="dialog">
@@ -141,6 +155,15 @@
 				show_role_list();
 				alert("Role deleted");
 			}
+		});
+	}
+
+	function employee_list_by_role(role_id){
+
+		$.post("backend/employee_table_by_role.php",{role_id:role_id}, function(result){
+
+			$("#employee-list").html(result);
+			$("#myTable").stupidtable();
 		});
 	}
 

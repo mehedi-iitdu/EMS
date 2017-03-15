@@ -79,7 +79,7 @@
 	        		success: function(data){
 
 	        			if(data=="Okay"){
-	        				window.location.replace("http://localhost/Project/index.php");
+	        				window.location.replace("http://localhost/EMS/index.php");
 	        			}
 	        			else{
 	        				alert("Invalid Email or Password");

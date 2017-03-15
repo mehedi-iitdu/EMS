@@ -13,7 +13,7 @@
 	$employee_id = $_GET['employee_id'];
 
 	if (!isset($_SESSION['login_id'])) {
-        header ("Location: http://localhost/project/login.php");
+        header ("Location: http://localhost/EMS/login.php");
     }
  ?>
 
@@ -155,7 +155,7 @@
 
 	        			if (data=="Okay") {
 	        				alert("Employee Information Updated");
-	        				window.location.replace("http://localhost/Project/index.php");
+	        				window.location.replace("http://localhost/EMS/index.php");
 	        			}
 	        			else{
 	        				alert("Sorry");

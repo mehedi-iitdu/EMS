@@ -12,7 +12,7 @@
 	session_start();
 
 	if (!isset($_SESSION['login_id'])) {
-        header ("Location: http://localhost/project/login.php");
+        header ("Location: http://localhost/EMS/login.php");
     }
  ?>
 

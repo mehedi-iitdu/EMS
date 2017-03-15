@@ -11,7 +11,7 @@
 	session_start();
 
 	if (!isset($_SESSION['login_id'])) {
-        header ("Location: http://localhost/project/login.php");
+        header ("Location: http://localhost/EMS/login.php");
     }
  ?>
 
@@ -23,26 +23,37 @@
 
  <div class="container">
 
+ 		<div class="row">
+ 			
+ 			<?php
 
- 		<div class="col-sm-6">
- 			<h2>Department List</h2>
- 			<span id="department-list"></span>
+ 				if($_SESSION['login_role_id']==1){
+
+ 			 	echo '<div class="col-sm-6 add-deparment">
+ 				 		<h2>Add Department</h2>
+ 				 		<form id="add-deparment-form">
+ 				 			<label for="deparment-name">Department Name</label>
+ 				 			<input type="text" name="deparment-name" id="deparment-name">
+ 				 			<input type="submit" name="submit" value="Save">
+ 				 		</form>
+ 			 		</div>';
+ 				}
+ 			?>
+
  		</div>
 
- 		<?php
+ 		<div class="row">
+ 			
+ 			<div class="col-sm-4">
+ 				<h2>Department List</h2>
+ 				<span id="department-list"></span>
+ 			</div>
 
- 			if($_SESSION['login_role_id']==1){
+ 			<div class="col-sm-8">
+ 				<span id="employee-list"></span>
+ 			</div>
 
- 		 	echo '<div class="col-sm-6 add-deparment">
- 			 		<h2>Add Department</h2>
- 			 		<form id="add-deparment-form">
- 			 			<label for="deparment-name">Department Name</label>
- 			 			<input type="text" name="deparment-name" id="deparment-name">
- 			 			<input type="submit" name="submit" value="Save">
- 			 		</form>
- 		 		</div>';
- 			}
- 		?>
+ 		</div>
 
  	<!-- Modal -->
  	  <div class="modal fade" id="department_edit_modal" role="dialog">
@@ -147,7 +158,11 @@
 
 	function employee_list_by_department(department_id){
 
-		alert(department_id);
+		$.post("backend/employee_table_by_department.php",{department_id:department_id}, function(result){
+
+			$("#employee-list").html(result);
+			$("#myTable").stupidtable();
+		});
 	}
 
 </script>

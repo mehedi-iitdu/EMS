@@ -147,7 +147,7 @@
 
 	        			if(data=="Okay"){
 	        				alert("Employee Added!");
-	        				window.location.replace("http://localhost/project/index.php");
+	        				window.location.replace("http://localhost/EMS/index.php");
 	        			}
 
 	        			else{

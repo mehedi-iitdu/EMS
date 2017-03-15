@@ -10,12 +10,12 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="http://localhost/Project/">Home</a></li>
-        <li><a href="http://localhost/Project/department.php">Department</a></li>
-        <li><a href="http://localhost/Project/role.php">Role</a></li>  
+        <li><a href="http://localhost/EMS/">Home</a></li>
+        <li><a href="http://localhost/EMS/department.php">Department</a></li>
+        <li><a href="http://localhost/EMS/role.php">Role</a></li>  
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://localhost/Project/employee_profile.php"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+        <li><a href="http://localhost/EMS/employee_profile.php"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
         <li><a onclick="return logout();" href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
       </ul>
     </div>
@@ -28,7 +28,7 @@
     
     $.post("backend/logout.php",{},function(result){
       if (result=="Okay") {
-        window.location.replace("http://localhost/Project/login.php");
+        window.location.replace("http://localhost/EMS/login.php");
       }
     });
 

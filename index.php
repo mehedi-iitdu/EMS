@@ -12,7 +12,7 @@
 	session_start();
 
 	if (!isset($_SESSION['login_id'])) {
-        header ("Location: http://localhost/project/login.php");
+        header ("Location: http://localhost/EMS/login.php");
     }
  ?>
  
@@ -82,7 +82,7 @@
 
 	function edit_employee(employee_id){
 
-		window.location.replace("http://localhost/Project/employee_edit.php?employee_id="+employee_id);
+		window.location.replace("http://localhost/EMS/employee_edit.php?employee_id="+employee_id);
 	}
 
 	function delete_employee(employee_id){
