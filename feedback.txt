@@ -3,5 +3,5 @@
 //3. Need to sort the results according to Name or Deaprment or Gender or Date of Birth
 //4. Remove the Registration Option. Admin will add the employee directly from the employee page.
 //5. The system should be responsive and adaptive to different device screen sizes
-6. In department page both admin and normar user will see the employee list for a selected department.
+//6. In department page both admin and normar user will see the employee list for a selected department.
 //7. Professor wanted to see where you used AJAX. We have 15% marks on using AJAX.
