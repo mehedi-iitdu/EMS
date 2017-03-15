@@ -80,7 +80,7 @@
 <script type="text/javascript">
 	
 	$(document).ready(function(){
-		show_departmnet_list();
+		show_department_list();
 	});
 
 	$("#add-deparment-form").submit(function(e){
@@ -92,13 +92,13 @@
 			
 			$.post("backend/save_department.php",{department_name:department_name}, function(result){
 				alert(result);
-				show_departmnet_list();
+				show_department_list();
 			});
 		}
 
 	});
 
-	function show_departmnet_list() {
+	function show_department_list() {
 		$.post("backend/department_list.php",{},function(result){
 			$("#department-list").html(result);
 		});
@@ -122,7 +122,7 @@
 		$.post("backend/update_department.php",{edited_department_id:edited_department_id, edited_department_name:edited_department_name}, function(result){
 				if(result=="Okay"){
 					alert("Department Name Edited");
-					show_departmnet_list();
+					show_department_list();
 				}
 		});
 	}
@@ -139,10 +139,15 @@
 		$.post("backend/delete_department.php",{department_id:department_id}, function(result){
 
 			if (result=="Okay") {
-				show_departmnet_list();
+				show_department_list();
 				alert("Department deleted");
 			}
 		});
+	}
+
+	function employee_list_by_department(department_id){
+
+		alert(department_id);
 	}
 
 </script>
