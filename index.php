@@ -36,7 +36,14 @@
 		<input class="form-control" type="text" id="gender" name="gender" placeholder="Search by Gender">
 		<input class="form-control" type="submit" id="search" name="submit" value="Search">
 
-		<a href="add_employee.php" class="btn btn-primary pull-right">Add New Employee</a>
+		<?php
+
+			if($_SESSION['login_role_id']==1){
+			
+			echo '<a href="add_employee.php" class="btn btn-primary pull-right">Add New Employee</a>';
+		}
+
+		?>
 
 	</form>
 
