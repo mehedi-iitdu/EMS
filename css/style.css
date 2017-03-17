@@ -22,4 +22,10 @@ th[data-sort] {
 .table>tbody>tr>td{
 
 	vertical-align: middle;
+	border-top: 0px !important;
+}
+
+.custom-button{
+
+	display: table-cell;
 }
