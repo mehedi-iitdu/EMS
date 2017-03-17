@@ -4,8 +4,12 @@
 	
 	$name = $_POST['name'];
 	$email = $_POST['email'];
+	$password = $_POST['password'];
 	$date_of_birth = $_POST['date_of_birth'];
 	$gender = $_POST['gender'];
+	$department_id = $_POST['department_id'];
+	$salary = $_POST['salary'];
+	$role_id = $_POST['role_id'];
 	$photo = $_FILES['photo']['name'];
 
 	$targetdir = '../uploads/';   
@@ -23,7 +27,7 @@
 	else{
 
 
-		$sql = "INSERT INTO employee (email, name, date_of_birth, gender, photo) VALUES ('$email', '$name', '$date_of_birth', '$gender', '$photo')";
+		$sql = "INSERT INTO employee (email, password, name, date_of_birth, gender, department_id, salary, role_id, photo) VALUES ('$email', '$password', '$name', '$date_of_birth', '$gender', '$department_id', '$salary', '$role_id', '$photo')";
 		$result = mysqli_query($connection, $sql);
 
 
