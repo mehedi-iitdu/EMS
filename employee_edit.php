@@ -55,10 +55,41 @@
 		</div>
 
 		<div class="form-group">
+			<label for="password" class="control-label col-sm-2">Password</label>
+			<div class="col-sm-4">
+				<input class="form-control" type="password" name="password" id="password" value="<?php echo $row['password'];?>">
+			</div>
+		</div>
+
+		<div class="form-group">
 			<label for="date_of_birth" class="control-label col-sm-2">Date of Birth</label>
 			<div class="col-sm-4">
 				<input type="date" class="form-control" name="date_of_birth" id="date_of_birth" value="<?php echo $row['date_of_birth'];?>">
 			</div>
+		</div>
+
+
+		<div class="form-group">
+		    <label class="control-label col-sm-2">Gender</label>
+		    <div class="col-sm-6">
+		        <div class="row">
+		            <div class="col-sm-2">
+		                <label class="radio-inline">
+		                    <input type="radio" id="gender" name="gender" value="Female" <?php if($row['gender']=="Female"){echo "checked";}?> >Female
+		                </label>
+		            </div>
+		            <div class="col-sm-2">
+		                <label class="radio-inline">
+		                    <input type="radio" id="gender" name="gender" value="Male" <?php if($row['gender']=="Male"){echo "checked";}?>  >Male
+		                </label>
+		            </div>
+		            <div class="col-sm-2">
+		                <label class="radio-inline">
+		                    <input type="radio" id="gender" name="gender" value="Others" <?php if($row['gender']=="Others"){echo "checked";}?> >Others
+		                </label>
+		            </div>
+		        </div>
+		    </div>
 		</div>
 
 		<div class="form-group">
@@ -117,6 +148,13 @@
 			?>
 		</select>
 			</div>
+		</div>
+
+		<div class="form-group">
+		    <label for="photo" class="col-sm-2 control-label">Change Photo</label>
+		    <div class="col-sm-4">
+		        <input type="file" id="photo" name="photo" class="form-control">
+		    </div>
 		</div>
 
 		<div class="form-group">

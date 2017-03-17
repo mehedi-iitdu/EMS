@@ -10,6 +10,8 @@
 	<?php
 
 		include 'header.php';
+
+		include 'db/db_connect.php';
 	?>
 
 	<div class="container">
@@ -34,11 +36,19 @@
 	                </div>
 
 	                <div class="form-group">
+	                    <label for="password" class="col-sm-3 control-label">Password</label>
+	                    <div class="col-sm-9">
+	                        <input type="password" id="password" name="password" placeholder="Password" class="form-control" data-required="true">
+	                    </div>
+	                </div>
+
+	                <div class="form-group">
 	                    <label for="date_of_birth" class="col-sm-3 control-label">Date of Birth</label>
 	                    <div class="col-sm-9">
 	                        <input type="date" id="date_of_birth" name="date_of_birth" class="form-control" data-required="true" data-required="true">
 	                    </div>
 	                </div>
+	                
 	                <div class="form-group">
 	                    <label class="control-label col-sm-3">Gender</label>
 	                    <div class="col-sm-6">
@@ -60,7 +70,59 @@
 	                            </div>
 	                        </div>
 	                    </div>
-	                </div> <!-- /.form-group -->
+	                </div>
+
+	                <div class="form-group">
+	                	<label for="department_id" class="control-label col-sm-3">Department</label>
+	                	<div class="col-sm-9">
+	                		<select class="form-control" id="department_id" name="department_id" data-required="true">
+
+	                					<option value="">---Select Department---</option>
+
+	                					<?php
+
+	                						$sql = "SELECT * FROM department";
+	                						$result = mysqli_query($connection, $sql);
+	                						while ($row = mysqli_fetch_assoc($result)) {
+	                							echo '<option value="'.$row['department_id'].'">'.$row['department_name'].'</option>';
+	                						}
+
+	                					?>
+
+	                				</select>
+	                	</div>
+	                </div>
+
+
+	                <div class="form-group">
+	                    <label for="salary" class="col-sm-3 control-label">Salary</label>
+	                    <div class="col-sm-9">
+	                        <input type="number" id="salary" name="salary" class="form-control" data-required="true">
+	                    </div>
+	                </div>
+
+
+	                <div class="form-group">
+	                	<label for="role_id" class="control-label col-sm-3">Role</label>
+	                	<div class="col-sm-9">
+	                		<select class="form-control" id="role_id" name="role_id" data-required="true">
+
+	                					<option value="">---Select Role---</option>
+
+	                					<?php
+
+	                						$sql = "SELECT * FROM role";
+	                						$result = mysqli_query($connection, $sql);
+	                						while ($row = mysqli_fetch_assoc($result)) {
+	                							echo '<option value="'.$row['role_id'].'">'.$row['role_name'].'</option>';
+	                						}
+
+	                					?>
+
+	                				</select>
+	                	</div>
+	                </div>
+
 	                <div class="form-group">
 	                    <label for="photo" class="col-sm-3 control-label">Photo</label>
 	                    <div class="col-sm-9">
@@ -74,11 +136,11 @@
 	                    </div>
 	                </div>
 
-	            </form> <!-- /form -->
+	            </form> 
 
 	            </div>
 
-	        </div> <!-- ./container -->
+	        </div> 
 
 </body>
 
