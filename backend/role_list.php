@@ -27,7 +27,7 @@
 
 		$list .= '<tr>
 					<td>'.$serial.'</td>
-					<td onclick="employee_list_by_role('.$row['role_id'].')"><input type="hidden" id="role_id-'.$row['role_id'].'" value="'.$row['role_name'].'">'.$row['role_name'].'</td>';
+					<td class="btn btn-default custom-button" onclick="employee_list_by_role('.$row['role_id'].')"><input type="hidden" id="role_id-'.$row['role_id'].'" value="'.$row['role_name'].'">'.$row['role_name'].'</td>';
 
 					if($_SESSION['login_role_id']==1 && $row['role_id']!=1){
 
