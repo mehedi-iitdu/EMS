@@ -13,7 +13,14 @@
 		<tr>
 			<th>Photo</th>
 			<th data-sort="string">Name</th>
-			<th data-sort="string">Email</th>
+			<th data-sort="string">Email</th>';
+
+			if($_SESSION['login_role_id']==1){
+				$list .= '<th data-sort="string">Password</th>';
+			}
+
+			$list .='
+			<th data-sort="string">Date of Birth</th>
 			<th data-sort="string">Gender</th>
 			<th data-sort="int">Salary</th>
 			<th data-sort="string">Department</th>
@@ -51,7 +58,15 @@
 		$list.= '<tr>
 					<td><img src="uploads/'.$row['photo'].'" style="height: 50px; width: 50px"></td>
 					<td>'.$row['name'].'</td>
-		    		<td>'.$row['email'].'</td>
+		    		<td>'.$row['email'].'</td>';
+
+		    		if($_SESSION['login_role_id']==1){
+						$list .= '<td>'.$row['password'].'</td>';
+					}
+
+					$list .= '
+
+		    		<td>'.$row['date_of_birth'].'</td>
 		    		<td>'.$row['gender'].'</td>
 		    		<td>'.$row['salary'].'</td>';
 
